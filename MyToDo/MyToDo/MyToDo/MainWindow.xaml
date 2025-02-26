@@ -7,7 +7,8 @@
         xmlns:materialDesignConverters="clr-namespace:MaterialDesignThemes.Wpf.Converters;assembly=MaterialDesignThemes.Wpf"
         xmlns:local="clr-namespace:MyToDo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStyle="None">
+        AllowsTransparency="True"
+        Title="MainWindow" Height="768" Width="1280" WindowStyle="None">
     
     <materialDesign:DialogHost DialogTheme="Inherit"
                              Identifier="RootDialog"
@@ -21,11 +22,11 @@
             </materialDesign:DrawerHost.LeftDrawerContent>
 
             <DockPanel>
-                <materialDesign:ColorZone Padding="16"
+                <materialDesign:ColorZone Padding="16" x:Name="colorZone"
                                   materialDesign:ElevationAssist.Elevation="Dp4"
                                   DockPanel.Dock="Top"
                                   Mode="PrimaryMid">
-                    <DockPanel>
+                    <DockPanel LastChildFill="False">
                         <StackPanel Orientation="Horizontal">
                             <ToggleButton x:Name="MenuToggleButton"
                             AutomationProperties.Name="HamburgerToggleButton"
@@ -49,15 +50,26 @@
                       Foreground="{Binding RelativeSource={RelativeSource AncestorType={x:Type FrameworkElement}}, Path=(TextElement.Foreground)}"
                       Style="{StaticResource MaterialDesignToolButton}"
                       ToolTip="Next Item" />
+                            
+                            <TextBlock Margin="20,0,0,0"
+         HorizontalAlignment="Center"
+         VerticalAlignment="Center"
+         AutomationProperties.Name="Material Design In XAML Toolkit"
+         FontSize="22"
+         Text="笔记本" />
 
                         </StackPanel>
-
-                        <TextBlock Margin="-152,0,0,0"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       AutomationProperties.Name="Material Design In XAML Toolkit"
-                       FontSize="22"
-                       Text="MyToDo" />
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
+                            <Image Source="/Images/user.jpg" Width="25" Height="25" >
+                                <Image.Clip>
+                                    <EllipseGeometry Center="12.5,12.5" RadiusX="12.5" RadiusY="12.5"/>
+                                </Image.Clip>
+                            </Image>
+                            <Button x:Name="btnMin" Content="‒" Style="{StaticResource MaterialDesignFlatMidBgButton}"/>
+                            <Button x:Name="btnMax" Content="▢" Style="{StaticResource MaterialDesignFlatMidBgButton}"/>
+                            <Button x:Name="btnClose" Content="✕" Style="{StaticResource MaterialDesignFlatMidBgButton}"/>
+                        </StackPanel>
+              
                     </DockPanel>
                 </materialDesign:ColorZone>
             </DockPanel>
