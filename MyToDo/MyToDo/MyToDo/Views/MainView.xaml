@@ -8,8 +8,16 @@
         xmlns:materialDesignConverters="clr-namespace:MaterialDesignThemes.Wpf.Converters;assembly=MaterialDesignThemes.Wpf"
         xmlns:local="clr-namespace:MyToDo.Views" xmlns:viewmodels="clr-namespace:MyToDo.ViewModels" 
         mc:Ignorable="d"
-        AllowsTransparency="True"
         prism:ViewModelLocator.AutoWireViewModel="True"
+        AllowsTransparency="True"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="微软雅黑"
+        TextElement.FontSize="13"
+        TextElement.FontWeight="Regular"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="768" Width="1280" WindowStyle="None">
     <materialDesign:DialogHost DialogTheme="Inherit"
                          Identifier="RootDialog"
@@ -25,16 +33,16 @@
                             </Image.Clip>
                         </Image>
                         <TextBlock Text="加菲猫" Margin="0,10" HorizontalAlignment="Center"/>
-                        <ListBox ItemContainerStyle="{StaticResource MyListBoxItemStyle}" ItemsSource="{Binding MenuBars}">
+
+                        <ListBox ItemsSource="{Binding MenuBars}">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal" Background="Transparent">
-                                        <materialDesign:PackIcon Kind="{Binding Icon}" Width="25" Height="25"/>
-                                        <TextBlock Text="{Binding Title}" Margin="20,5" HorizontalAlignment="Center"/>
+                                        <materialDesign:PackIcon Kind="{Binding Icon}" Width="25" Height="25" Margin="10,0"/>
+                                        <TextBlock Text="{Binding Title}" Margin="10,5" HorizontalAlignment="Center"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
-
                         </ListBox>
                     </StackPanel>
                 </DockPanel>
