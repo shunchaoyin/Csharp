@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PrimsTest.Core\PrimsTest.Core.csproj" />
+    <ProjectReference Include="..\Modules\PrimsTest.Modules.ModuleName\PrimsTest.Modules.ModuleName.csproj" />
+    <ProjectReference Include="..\Services\PrimsTest.Services.Interfaces\PrimsTest.Services.Interfaces.csproj" />
+    <ProjectReference Include="..\Services\PrimsTest.Services\PrimsTest.Services.csproj" />
+  </ItemGroup>
+</Project>

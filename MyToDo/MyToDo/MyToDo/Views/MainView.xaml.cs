@@ -1,4 +1,5 @@
-﻿using MyToDo.Common.Models;
+﻿using MaterialDesignThemes.Wpf;
+using MyToDo.Common.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -24,6 +25,11 @@ namespace MyToDo.Views
         public MainView()
         {
             InitializeComponent();
+
+            menuBar.SelectionChanged += (s, e) =>
+            {
+                drawHost.IsLeftDrawerOpen = false;
+            };
 
             btnMin.Click += (s, e) => { WindowState = WindowState.Minimized; };
             btnClose.Click += (s, e) => { Close(); };
