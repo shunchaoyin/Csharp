@@ -157,19 +157,22 @@
                     </i:Interaction.Triggers>-->
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <DockPanel 
+                            <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect Kind=ExpandIn}" >
+                                <DockPanel 
                                 MaxHeight="80" LastChildFill="False">
-                                <StackPanel DockPanel.Dock="Left">
-                                    <TextBlock
+                                    <StackPanel DockPanel.Dock="Left">
+                                        <TextBlock
                                           FontSize="16"
                                           FontWeight="Bold"
                                           Text="{Binding Title}" />
-                                    <TextBlock
+                                        <TextBlock
                                           Margin="0,5"
                                           Opacity="0.5"
                                           Text="{Binding Content}" />
-                                </StackPanel>
-                            </DockPanel>
+                                    </StackPanel>
+                                </DockPanel>
+                            </materialDesign:TransitioningContent>
+
 
                         </DataTemplate>
                     </ListBox.ItemTemplate>

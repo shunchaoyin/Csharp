@@ -10,5 +10,6 @@ namespace MyToDo.Extensions
     public static class PrismManager
     {
         public static readonly string MainViewRegion = "MainViewRegion";
+        public static readonly string SettingsViewRegionName = "SettingsViewRegion";
     }
 }
