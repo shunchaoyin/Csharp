@@ -24,7 +24,7 @@ namespace MyToDo.ViewModels
             if (obj == null || string.IsNullOrWhiteSpace(obj.NameSpace))
                 return;
 
-            //regionManager.Regions[PrismManager.SettingsViewRegionName].RequestNavigate(obj.NameSpace);
+            regionManager?.Regions[PrismManager.SettingsViewRegionName].RequestNavigate(obj.NameSpace);
         }
 
         public DelegateCommand<MenuBar>? NavigateCommand { get; private set; }
