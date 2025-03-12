@@ -12,7 +12,7 @@ using System.Windows.Shapes;
 namespace MyApp;
 
 /// <summary>
-/// Interaction logic for MainWindow.xaml
+/// Interaction logic for MainUI.xaml
 /// </summary>
 public partial class MainWindow : Window
 {

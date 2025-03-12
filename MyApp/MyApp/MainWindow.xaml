@@ -8,6 +8,6 @@
         xmlns:pluginUI="clr-namespace:Plugin.UI.View;assembly=Plugin.UI"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <pluginUI:LogView />
+        <pluginUI:MainUI/>
     </Grid>
 </Window>

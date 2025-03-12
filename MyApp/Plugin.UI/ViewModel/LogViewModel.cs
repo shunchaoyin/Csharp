@@ -12,11 +12,12 @@ using System.Threading.Tasks;
 
 namespace Plugin.UI.ViewModel
 {
-    partial class LogViewModel : ObservableObject, IRecipient<ValueChangedMessage<Log>>
+    partial class LogViewModel : ObservableRecipient, IRecipient<ValueChangedMessage<Log>>
     {
 
         public LogViewModel()
         {
+            IsActive = true;
             Logs = new ObservableCollection<Log>();
             Logs.Add(new Log(LogType.Info, "This is a test log."));
             Logs.Add(new Log(LogType.Warning, "This is a test warning."));
