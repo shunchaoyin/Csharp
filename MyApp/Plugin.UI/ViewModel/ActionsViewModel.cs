@@ -1,14 +1,15 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
-using CommunityToolkit.Mvvm.Messaging.Messages;
-using CommunityToolkit.Mvvm.Messaging;
-using Plugin.UI.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
+using CommunityToolkit.Mvvm.Messaging.Messages;
+using Plugin.UI.Model;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Plugin.UI.ViewModel
 {
@@ -21,21 +22,31 @@ namespace Plugin.UI.ViewModel
         public ActionsViewModel()
         {
             Actions = new ObservableCollection<SingleActionViewModel>
-                {
-                    new SingleActionViewModel("Action 1", "This is action 1", new RelayCommand<string>(ReadSN), new RelayCommand<string>(WriteSN)),
-                    new SingleActionViewModel("Action 2", "This is action 2", new RelayCommand<string>(ReadIMEI), new RelayCommand<string>(WriteIMEI))
-                };
+            {
+                new SingleActionViewModel(
+                    "Action 1",
+                    "This is action 1",
+                    new RelayCommand<string>(ReadSN),
+                    new RelayCommand<string>(WriteSN)
+                ),
+                new SingleActionViewModel(
+                    "Action 2",
+                    "This is action 2",
+                    new RelayCommand<string>(ReadIMEI),
+                    new RelayCommand<string>(WriteIMEI)
+                ),
+            };
         }
 
-        private void ReadSN(string? text)
+        private void ReadSN(string? obj)
         {
-            // 修改Text属性
-            var action = Actions.FirstOrDefault(a => a.Text == text);
-            if (action != null)
-            {
-                action.Text = "Read SN";
-            }
-            LogMessage(LogType.Info, "ReadSN");
+            //var action = Actions.FirstOrDefault(a => a.Text == text);
+            //if (action != null)
+            //{
+            //    action.Text = "Read SN";
+            //}
+
+            LogMessage(LogType.Warning, "ReadSN");
         }
 
         private void WriteSN(string? text)
@@ -47,7 +58,7 @@ namespace Plugin.UI.ViewModel
                 action.Text = "Write SN";
             }
 
-           LogMessage(LogType.Warning, "WriteSN");
+            LogMessage(LogType.Warning, "WriteSN");
         }
 
         private void ReadIMEI(string? text)
@@ -76,4 +87,4 @@ namespace Plugin.UI.ViewModel
             WeakReferenceMessenger.Default.Send(new ValueChangedMessage<Log>(log));
         }
     }
- }
+}

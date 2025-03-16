@@ -13,31 +13,13 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <hc:SideMenu Grid.Column="0" Width="200" x:Name="sideMenu"  ExpandMode="ShowOne">
-            <hc:SideMenuItem Header="LogView">
-                <!--<hc:SideMenuItem.Icon>
-                    <Image Source="../Images/DevOps-Overview.png" Width="24" Height="24"/>
-                </hc:SideMenuItem.Icon>
-                <hc:SideMenuItem Header="(正式)视觉大屏"  x:Name="VisualLargeScreen" Command="{Binding SelectCmd}">
-                    <hc:SideMenuItem.Icon>
-                        <Image Source="../Images/DevOps-Pipelines.png" Width="12" Height="12"/>
-                    </hc:SideMenuItem.Icon>
-                    <hc:SideMenuItem.CommandParameter>
-                        <MultiBinding Converter="{StaticResource MultiValueConverter}">
-                            <Binding Path="Header" RelativeSource="{RelativeSource Self}"/>
-                            <Binding Path="Name" RelativeSource="{RelativeSource Self}"/>
-                        </MultiBinding>
-                    </hc:SideMenuItem.CommandParameter>-->
-            </hc:SideMenuItem>
-
-            <hc:SideMenuItem Header="TextView">
-            </hc:SideMenuItem>
-            <hc:SideMenuItem Header="ActionsView">
-            </hc:SideMenuItem>
-        </hc:SideMenu>
-
-
-        <local:ActionsView Grid.Column="0"/>
-        <local:LogView Grid.Column="1"/>
+        <TabControl Grid.Column="0" >
+            <TabItem Header="Actions">
+                <local:TestView/>
+            </TabItem>
+            <TabItem Header="Logs">
+                <local:LogView/>
+            </TabItem>
+        </TabControl>
     </Grid>
 </UserControl>

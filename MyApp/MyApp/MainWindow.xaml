@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyApp"
         mc:Ignorable="d"
-        xmlns:pluginUI="clr-namespace:Plugin.UI.View;assembly=Plugin.UI"
+        xmlns:pluginUI="clr-namespace:Plugin.UI.View;assembly=Plugin.UI" 
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        Background="#1E1E1E"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <pluginUI:MainUI/>
